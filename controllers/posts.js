@@ -7,7 +7,7 @@ const router = express.Router();
 //GET ALL POST FUNCTION
 export const getPost = async (req, res) => {
     try {
-        const postMessages = await PostMessage.find();
+        const postMessages = await PostMessage.find().sort({value: -1})
                 
         res.status(200).json(postMessages);
     } catch (error) {
@@ -17,8 +17,8 @@ export const getPost = async (req, res) => {
 
 //CREATE POST FUNCTION
 export const createPost = async (req,res) => {
-    const { movieTitle, creator, priority, submittedOn } = req.body;
-    const newPostMessage = new PostMessage({ movieTitle, creator, priority, submittedOn })
+    const { movieTitle, creator, priority, submittedOn, value } = req.body;
+    const newPostMessage = new PostMessage({ movieTitle, creator, priority, submittedOn, value })
 
     try {
         await newPostMessage.save();

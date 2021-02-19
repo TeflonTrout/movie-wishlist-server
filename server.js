@@ -8,7 +8,8 @@ import postRoutes from './routes/posts.js';
 const app = express();
 dotenv.config();
 
-//DECLARE RUNNING PORT
+
+
 const PORT = process.env.PORT || 5000
 
 //ROUTES
