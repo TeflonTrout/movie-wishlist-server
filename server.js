@@ -9,8 +9,6 @@ import archiveRoutes from "./routes/archive.js";
 const app = express();
 dotenv.config();
 
-
-
 const PORT = process.env.PORT || 5000
 
 //ROUTES
