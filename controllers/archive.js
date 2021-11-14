@@ -6,9 +6,9 @@ const router = express.Router();
 
 export const archivePost = async (req, res) => {
     console.log('request received')
-    console.log(req.params)
-    const { movieTitle, creator, releaseDate, poster, priority, submittedOn, value } = req.body;
-    const newArchivePost = new ArchivePost({ movieTitle, creator, releaseDate, poster, priority, submittedOn, value })
+    const { movieTitle, creator, releaseDate, poster, priority, submittedOn, value, id } = req.body;
+    console.log(req.body)
+    const newArchivePost = new ArchivePost({ movieTitle, creator, releaseDate, poster, priority, submittedOn, value, id })
     try {
         await newArchivePost.save();
         res.status(201).json(newArchivePost)
