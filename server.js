@@ -4,6 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import postRoutes from './routes/posts.js';
+import archiveRoutes from "./routes/archive.js";
 
 const app = express();
 dotenv.config();
@@ -17,6 +18,8 @@ app.use(bodyParser.json({extended: true}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 app.use('/posts', postRoutes);
+app.use('/archive', archiveRoutes)
+
 
 //MongoDB Setups
 const DB_URL = process.env.MONGO_DB_URL
