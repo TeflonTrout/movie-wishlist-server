@@ -3,7 +3,7 @@ import uniqueValidator from 'mongoose-unique-validator';
 
 const archiveShema = mongoose.Schema({
     id: {
-        type: Date,
+        type: String,
         default: Date.now()
     },
     movieTitle: {type: String, required: true, unique: true},
@@ -12,10 +12,7 @@ const archiveShema = mongoose.Schema({
     releaseDate: String,
     poster: String,
     value: Number,
-    submittedOn: {
-        type: Date,
-        default: Date.now()
-    }
+    submittedOn: String,
 })
 
 archiveShema.plugin(uniqueValidator);
