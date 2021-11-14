@@ -18,7 +18,7 @@ export const getPost = async (req, res) => {
 //CREATE POST FUNCTION
 export const createPost = async (req,res) => {
     const { movieTitle, creator, releaseDate, poster, priority, submittedOn, value } = req.body;
-    const newPostMessage = new PostMessage({ movieTitle, creator, priority, submittedOn, value })
+    const newPostMessage = new PostMessage({ movieTitle, creator, releaseDate, poster, priority, submittedOn, value })
     try {
         await newPostMessage.save();
         res.status(201).json(newPostMessage)
