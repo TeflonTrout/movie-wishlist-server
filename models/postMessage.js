@@ -9,6 +9,8 @@ const postSchema = mongoose.Schema({
     movieTitle: {type: String, required: true, unique: true},
     creator: String,
     priority: String,
+    releaseDate: String,
+    poster: String,
     value: Number,
     submittedOn: {
         type: Date,
