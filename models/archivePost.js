@@ -14,7 +14,7 @@ const archiveShema = mongoose.Schema({
     _id: String
 })
 
-archiveShema.plugin(uniqueValidator);
+// archiveShema.plugin(uniqueValidator);
 const ArchivePost = mongoose.model('ArchivePost', archiveShema)
 
 export default ArchivePost

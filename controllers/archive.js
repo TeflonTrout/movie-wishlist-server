@@ -5,9 +5,8 @@ import ArchivePost from '../models/archivePost.js'
 const router = express.Router();
 
 export const archivePost = async (req, res) => {
-    console.log('request received')
-    const { id, movieTitle, creator, priority, releaseDate, poster, value, submittedOn, __v, _id } = req.body;
     console.log(req.body)
+    const { id, movieTitle, creator, priority, releaseDate, poster, value, submittedOn, __v, _id } = req.body;
     const newArchivePost = new ArchivePost({ id, movieTitle, creator, priority, releaseDate, poster, value, submittedOn, __v, _id })
     try {
         await newArchivePost.save();
@@ -27,5 +26,9 @@ export const getArchive = async (req, res) => {
 }
 
 export const deleteArchive = async (req, res) => {
-
+    console.log(req.params.id)
+    ArchivePost.findByIdAndRemove({_id: req.params.id})
+    .then(function(post){
+        res.send(post)
+    })
 }
