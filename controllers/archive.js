@@ -5,6 +5,7 @@ import ArchivePost from '../models/archivePost.js'
 const router = express.Router();
 
 export const archivePost = async (req, res) => {
+    console.log('request received')
     console.log(req.params.id)
     // const { movieTitle, creator, releaseDate, poster, priority, submittedOn, value } = req.body;
     // const newArchivePost = new ArchivePost({ movieTitle, creator, releaseDate, poster, priority, submittedOn, value })
