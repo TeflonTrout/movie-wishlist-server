@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import ArchivePost from '../models/archivePost'
+import ArchivePost from '../models/archivePost.js'
 
 const router = express.Router();
 
